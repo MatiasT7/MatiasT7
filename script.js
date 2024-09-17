@@ -125,12 +125,10 @@ const recetas = {
     },
     hummus: {
         "Garbanzos": { cantidad: 250, unidad: 'g' },
-        "Ajo": { cantidad: 2, unidad: 'dientes' },
-        "Tahini": { cantidad: 2, unidad: 'cucharada' },
         "Jugo de limón": { cantidad: 2, unidad: 'cucharada' },
         "Aceite de oliva": { cantidad: 4, unidad: 'cucharada' },
         "Sal": { cantidad: 1, unidad: 'cucharadita' },
-        "Pimienta": { cantidad: 1, unidad: 'pizca' }
+       
     }
 };
 
