@@ -239,6 +239,7 @@ const recetas = {
         "Vainilla": { cantidad: 1, unidad: 'cc' }
     }
 };
+
 // Función para calcular ingredientes
 function calcularIngredientes() {
     const recetaSeleccionada = document.getElementById('recetas').value;
@@ -250,36 +251,33 @@ function calcularIngredientes() {
     }
 
     const ingredientes = recetas[recetaSeleccionada];
-    const tablaResultados = document.getElementById('tablaResultados').getElementsByTagName('tbody')[0];
-    tablaResultados.innerHTML = ''; // Limpiar tabla antes de agregar nuevos resultados
+    let resultadosHTML = '<table><thead><tr><th>Ingrediente</th><th>Cantidad</th><th>Unidad</th></tr></thead><tbody>';
 
     for (let ingrediente in ingredientes) {
         const item = ingredientes[ingrediente];
         if (typeof item === 'object') {
             if (item.cantidad === 'c/n') {
-                const fila = tablaResultados.insertRow();
-                fila.insertCell().textContent = ingrediente;
-                fila.insertCell().textContent = item.cantidad;
-                fila.insertCell().textContent = item.unidad;
+                resultadosHTML += `<tr><td>${ingrediente}</td><td>${item.cantidad}</td><td>${item.unidad}</td></tr>`;
             } else {
                 for (let variante in item) {
-                    const cantidad = item[variante].cantidad * cantidadComensales;
-                    const unidad = item[variante].unidad;
-                    const fila = tablaResultados.insertRow();
-                    fila.insertCell().textContent = `${ingrediente} (${variante})`;
-                    fila.insertCell().textContent = cantidad;
-                    fila.insertCell().textContent = unidad;
+                    let cantidad = item[variante].cantidad * cantidadComensales;
+                    let unidad = item[variante].unidad;
+                    // Verifica que la cantidad es un número válido
+                    cantidad = isNaN(cantidad) ? 'Cantidad no válida' : cantidad.toFixed(2);
+                    resultadosHTML += `<tr><td>${variante}</td><td>${cantidad}</td><td>${unidad}</td></tr>`;
                 }
             }
         } else {
-            const cantidad = item.cantidad * cantidadComensales;
-            const unidad = item.unidad;
-            const fila = tablaResultados.insertRow();
-            fila.insertCell().textContent = ingrediente;
-            fila.insertCell().textContent = cantidad;
-            fila.insertCell().textContent = unidad;
+            let cantidad = item.cantidad * cantidadComensales;
+            let unidad = item.unidad;
+            // Verifica que la cantidad es un número válido
+            cantidad = isNaN(cantidad) ? 'Cantidad no válida' : cantidad.toFixed(2);
+            resultadosHTML += `<tr><td>${ingrediente}</td><td>${cantidad}</td><td>${unidad}</td></tr>`;
         }
     }
+
+    resultadosHTML += '</tbody></table>';
+    document.getElementById('resultados').innerHTML = resultadosHTML;
 }
 
 // Añadir evento al botón de calcular
