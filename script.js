@@ -255,35 +255,15 @@ function calcularIngredientes() {
     let resultadosHTML = '<table><thead><tr><th>Ingrediente</th><th>Cantidad</th><th>Unidad</th></tr></thead><tbody>';
 
     for (let ingrediente in ingredientes) {
-        const item = ingredientes[ingrediente];
-        
-        if (item && typeof item === 'object' && !Array.isArray(item)) {
-            if (item.cantidad === 'c/n') {
-                // Manejar caso especial para 'c/n'
-                resultadosHTML += `<tr><td>${ingrediente}</td><td>${item.cantidad}</td><td>${item.unidad}</td></tr>`;
-            } else {
-                // Iterar sobre las variantes si existen
-                for (let variante in item) {
-                    if (item.hasOwnProperty(variante)) {
-                        let cantidad = item[variante].cantidad;
-                        if (!isNaN(cantidad)) {
-                            cantidad *= cantidadComensales;
-                        } else {
-                            cantidad = 'Cantidad no válida';
-                        }
-                        let unidad = item[variante].unidad;
-                        resultadosHTML += `<tr><td>${variante}</td><td>${cantidad.toFixed(2)}</td><td>${unidad}</td></tr>`;
-                    }
-                }
-            }
-        } else {
-            // Manejo de ingredientes simples
+        if (ingredientes.hasOwnProperty(ingrediente)) {
+            const item = ingredientes[ingrediente];
             let cantidad = item.cantidad * cantidadComensales;
             let unidad = item.unidad;
-            if (isNaN(cantidad)) {
-                cantidad = 'Cantidad no válida';
-            }
-            resultadosHTML += `<tr><td>${ingrediente}</td><td>${cantidad.toFixed(2)}</td><td>${unidad}</td></tr>`;
+
+            // Asegurarse de que la cantidad es un número válido
+            cantidad = isNaN(cantidad) ? 'Cantidad no válida' : cantidad.toFixed(2);
+
+            resultadosHTML += `<tr><td>${ingrediente}</td><td>${cantidad}</td><td>${unidad}</td></tr>`;
         }
     }
 
