@@ -131,6 +131,117 @@ const recetas = {
         "Aceite de oliva": { cantidad: 4, unidad: 'cucharada' },
         "Sal": { cantidad: 1, unidad: 'cucharadita' },
         "Pimienta": { cantidad: 1, unidad: 'pizca' }
+              }
+    },
+    untableRicota: {
+        "Ricota": { cantidad: 170, unidad: 'g' },
+        "Aceite": { cantidad: 30, unidad: 'cc' },
+        "Sal": { cantidad: 1, unidad: 'g' }
+          }
+    },
+    untableZanahoria: {
+        "Zanahoria": { cantidad: 150, unidad: 'g' },
+        "Jugo de limón": { cantidad: 2.5, unidad: 'cc' },
+        "Aceite": { cantidad: 50, unidad: 'cc' },
+        "Sal": { cantidad: 1, unidad: 'g' },
+        "Jengibre fresco": { cantidad: 1, unidad: 'unidad' }
+    },
+    galletasAvenaPasas: {
+        "Huevos": { cantidad: 2, unidad: 'unidad' },
+        "Harina": { cantidad: 160, unidad: 'g' },
+        "Avena": { cantidad: 100, unidad: 'g' },
+        "Azúcar": { cantidad: 100, unidad: 'g' },
+        "Pasas de uva": { cantidad: 50, unidad: 'g' },
+        "Aceite": { cantidad: 60, unidad: 'cc' },
+        "Polvo de hornear": { cantidad: 5, unidad: 'g' },
+        "Vainilla": { cantidad: 3, unidad: 'cc' },
+        "Ralladura de limón": { cantidad: 'c/n', unidad: '' }
+    },
+    galletasAvenaQueso: {
+        "Queso fresco rallado": { cantidad: 45, unidad: 'g' },
+        "Avena": { cantidad: 240, unidad: 'g' },
+        "Aceite": { cantidad: 60, unidad: 'cc' },
+        "Agua": { cantidad: 180, unidad: 'cc' },
+        "Leche en polvo": { cantidad: 60, unidad: 'g' },
+        "Semillas lino": { cantidad: 25, unidad: 'g' },
+        "Semillas sésamo": { cantidad: 25, unidad: 'g' },
+        "Sal": { cantidad: 1.5, unidad: 'g' }
+    },
+    galletitasCitricas: {
+        "Huevos": { cantidad: 1, unidad: 'unidad' },
+        "Harina": { cantidad: 240, unidad: 'g' },
+        "Azúcar": { cantidad: 100, unidad: 'g' },
+        "Aceite": { cantidad: 50, unidad: 'cc' },
+        "Polvo de hornear": { cantidad: 10, unidad: 'g' },
+        "Jugo de naranja": { cantidad: 0.5, unidad: 'cc' },
+        "Jugo de limón": { cantidad: 0.5, unidad: 'cc' },
+        "Ralladura de naranja": { cantidad: 0.5, unidad: 'cc' },
+        "Ralladura de limón": { cantidad: 0.5, unidad: 'cc' },
+        "Variantes": {
+            "Leche": { cantidad: 35, unidad: 'cc' },
+            "Vainilla": { cantidad: 5, unidad: 'cc' }
+        }
+    },
+    ojitosCaseros: {
+        "Huevos": { cantidad: 1, unidad: 'unidad' },
+        "Azúcar": { cantidad: 60, unidad: 'g' },
+        "Aceite": { cantidad: 40, unidad: 'cc' },
+        "Almidón de maíz": { cantidad: 45, unidad: 'g' },
+        "Harina": { cantidad: 120, unidad: 'g' },
+        "Polvo de hornear": { cantidad: 3.5, unidad: 'g' },
+        "Vainilla": { cantidad: 2, unidad: 'cc' },
+        "Dulce de membrillo": { cantidad: 100, unidad: 'g' }
+    },
+    alfajoresMaicena: {
+        "Huevos": { cantidad: 1, unidad: 'unidad' },
+        "Azúcar": { cantidad: 60, unidad: 'g' },
+        "Aceite": { cantidad: 40, unidad: 'cc' },
+        "Almidón de maíz": { cantidad: 110, unidad: 'g' },
+        "Harina": { cantidad: 90, unidad: 'g' },
+        "Polvo de hornear": { cantidad: 3.5, unidad: 'g' },
+        "Vainilla": { cantidad: 2, unidad: 'cc' },
+        "Ralladura de limón": { cantidad: 2, unidad: 'cc' },
+        "Dulce de leche": { cantidad: 150, unidad: 'g' },
+        "Coco rallado": { cantidad: 20, unidad: 'g' }
+    },
+    frutosSecos: {
+        "Azúcar": { cantidad: 65, unidad: 'g' },
+        "Huevo": { cantidad: 2, unidad: 'unidad' },
+        "Avena": { cantidad: 80, unidad: 'g' },
+        "Harina": { cantidad: 40, unidad: 'g' },
+        "Polvo de hornear": { cantidad: 7, unidad: 'g' },
+        "Pasas de uva": { cantidad: 75, unidad: 'g' },
+        "Semillas de lino": { cantidad: 50, unidad: 'g' },
+        "Semillas de girasol": { cantidad: 50, unidad: 'g' },
+        "Maní sin sal": { cantidad: 50, unidad: 'g' },
+        "Manzana rallada": { cantidad: 150, unidad: 'g' },
+        "Ralladura de limón": { cantidad: 2, unidad: 'cc' }
+    },
+    mixFrutosSecos: {
+        "Frutos secos deshidratados": { cantidad: 150, unidad: 'g' },
+        "Frutas deshidratadas": { cantidad: 150, unidad: 'g' }
+    },
+    cremaVainilla: {
+        "Leche": { cantidad: 1500, unidad: 'cc' },
+        "Almidón de maíz": { cantidad: 90, unidad: 'g' },
+        "Azúcar": { cantidad: 150, unidad: 'g' },
+        "Vainilla": { cantidad: 5, unidad: 'cc' },
+        "Cocoa": { cantidad: 50, unidad: 'g' },
+        "Coco": { cantidad: 120, unidad: 'g' }
+    },
+    licuadoLecheFruta: {
+        "Leche": { cantidad: 1500, unidad: 'cc' },
+        "Fruta": { cantidad: 300, unidad: 'g' },
+        "Azúcar": { cantidad: 80, unidad: 'g' }
+    },
+    ojitosMijo: {
+        "Harina de mijo": { cantidad: 300, unidad: 'g' },
+        "Huevo": { cantidad: 1, unidad: 'unidad' },
+        "Azúcar": { cantidad: 100, unidad: 'g' },
+        "Dulce de leche": { cantidad: 100, unidad: 'g' },
+        "Aceite": { cantidad: 140, unidad: 'cc' },
+        "Vainilla": { cantidad: 1, unidad: 'cc' }
+    
     }
 };
 
