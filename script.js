@@ -134,39 +134,33 @@ const recetas = {
     }
 };
 
-// Función para calcular ingredientes
-function calcularIngredientes() {
-    const recetaSeleccionada = document.getElementById('recetas').value;
-    const cantidadComensales = parseInt(document.getElementById('comensales').value);
+// Función para mostrar ingredientes de una receta
+function mostrarIngredientes(receta) {
+    const ingredientes = recetas[receta];
 
-    if (!recetas[recetaSeleccionada] || isNaN(cantidadComensales) || cantidadComensales < 1) {
-        document.getElementById('resultado').innerHTML = '<p>Por favor, selecciona una receta y una cantidad de comensales válidos.</p>';
+    // Verifica si la receta existe
+    if (!ingredientes) {
+        console.log(`Receta "${receta}" no encontrada.`);
         return;
     }
 
-    const ingredientes = recetas[recetaSeleccionada];
-    let html = '<table><thead><tr><th>Ingrediente</th><th>Cantidad</th><th>Unidad</th></tr></thead><tbody>';
+    let html = '<table border="1"><tr><th>Ingrediente</th><th>Cantidad</th><th>Unidad</th></tr>';
 
     for (const [ingrediente, info] of Object.entries(ingredientes)) {
         if (ingrediente === 'Variantes') {
             html += '<tr><td colspan="3"><strong>Variantes:</strong></td></tr>';
             for (const [variante, varianteInfo] of Object.entries(info)) {
-                const cantidad = varianteInfo.cantidad === 'c/n' ? 'c/n' : varianteInfo.cantidad * cantidadComensales;
-                html += `<tr><td>${variante}</td><td>${cantidad}</td><td>${varianteInfo.unidad}</td></tr>`;
+                html += `<tr><td>${variante}</td><td>${varianteInfo.cantidad}</td><td>${varianteInfo.unidad}</td></tr>`;
             }
         } else {
-            const cantidad = info.cantidad === 'c/n' ? 'c/n' : info.cantidad * cantidadComensales;
-            html += `<tr><td>${ingrediente}</td><td>${cantidad}</td><td>${info.unidad}</td></tr>`;
+            html += `<tr><td>${ingrediente}</td><td>${info.cantidad}</td><td>${info.unidad}</td></tr>`;
         }
     }
 
-    html += '</tbody></table>';
+    html += '</table>';
 
     document.getElementById('resultado').innerHTML = html;
 }
 
-// Añadir event listener al botón al cargar el DOM
-document.addEventListener('DOMContentLoaded', () => {
-    const calcularButton = document.getElementById('calcular');
-    calcularButton.addEventListener('click', calcularIngredientes);
-});
+// Ejemplo de uso
+mostrarIngredientes('brownie');
