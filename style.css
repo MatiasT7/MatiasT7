@@ -14,8 +14,8 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 800px;
+    width: 80%; /* Ajusta el ancho según sea necesario */
+    max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
 }
 
 h1 {
