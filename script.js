@@ -134,13 +134,22 @@ const recetas = {
     }
 };
 
-// Función para mostrar ingredientes de una receta
-function mostrarIngredientes(receta) {
-    const ingredientes = recetas[receta];
+// Función para calcular y mostrar ingredientes ajustados
+function calcularIngredientes() {
+    const recetaSeleccionada = document.getElementById('receta').value;
+    const cantidadPorciones = parseFloat(document.getElementById('porciones').value);
+
+    // Validar la entrada
+    if (!recetaSeleccionada || isNaN(cantidadPorciones) || cantidadPorciones <= 0) {
+        alert('Por favor, selecciona una receta y especifica una cantidad de porciones válida.');
+        return;
+    }
+
+    const ingredientes = recetas[recetaSeleccionada];
 
     // Verifica si la receta existe
     if (!ingredientes) {
-        console.log(`Receta "${receta}" no encontrada.`);
+        alert(`Receta "${recetaSeleccionada}" no encontrada.`);
         return;
     }
 
@@ -150,10 +159,10 @@ function mostrarIngredientes(receta) {
         if (ingrediente === 'Variantes') {
             html += '<tr><td colspan="3"><strong>Variantes:</strong></td></tr>';
             for (const [variante, varianteInfo] of Object.entries(info)) {
-                html += `<tr><td>${variante}</td><td>${varianteInfo.cantidad}</td><td>${varianteInfo.unidad}</td></tr>`;
+                html += `<tr><td>${variante}</td><td>${(varianteInfo.cantidad * cantidadPorciones).toFixed(2)}</td><td>${varianteInfo.unidad}</td></tr>`;
             }
         } else {
-            html += `<tr><td>${ingrediente}</td><td>${info.cantidad}</td><td>${info.unidad}</td></tr>`;
+            html += `<tr><td>${ingrediente}</td><td>${(info.cantidad * cantidadPorciones).toFixed(2)}</td><td>${info.unidad}</td></tr>`;
         }
     }
 
@@ -162,5 +171,5 @@ function mostrarIngredientes(receta) {
     document.getElementById('resultado').innerHTML = html;
 }
 
-// Ejemplo de uso
-mostrarIngredientes('brownie');
+// Asignar evento al botón
+document.getElementById('calcular').addEventListener('click', calcularIngredientes);
