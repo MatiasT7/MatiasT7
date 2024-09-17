@@ -1,5 +1,4 @@
 // Definición de recetas
-// Definición de recetas
 const recetas = {
     brownie: {
         "Porotos negros crudos": { cantidad: 60, unidad: 'g' },
@@ -121,19 +120,28 @@ const recetas = {
         "Aceite": { cantidad: 50, unidad: 'cc' },
         "Polvo de hornear": { cantidad: 10, unidad: 'g' },
         "Sal": { cantidad: 1.25, unidad: 'g' },
-       
-
+        "Leche": { cantidad: 110, unidad: 'cc' },
+        "Vainilla": { cantidad: 10, unidad: 'cc' }
+    },
+    hummus: {
+        "Garbanzos": { cantidad: 250, unidad: 'g' },
+        "Ajo": { cantidad: 2, unidad: 'dientes' },
+        "Tahini": { cantidad: 2, unidad: 'cucharada' },
+        "Jugo de limón": { cantidad: 2, unidad: 'cucharada' },
+        "Aceite de oliva": { cantidad: 4, unidad: 'cucharada' },
+        "Sal": { cantidad: 1, unidad: 'cucharadita' },
+        "Pimienta": { cantidad: 1, unidad: 'pizca' }
     }
 };
 
 // Función para calcular y mostrar ingredientes ajustados
 function calcularIngredientes() {
-    const recetaSeleccionada = document.getElementById('receta').value;
-    const cantidadPorciones = parseFloat(document.getElementById('porciones').value);
+    const recetaSeleccionada = document.getElementById('recetas').value;
+    const cantidadComensales = parseFloat(document.getElementById('comensales').value);
 
     // Validar la entrada
-    if (!recetaSeleccionada || isNaN(cantidadPorciones) || cantidadPorciones <= 0) {
-        alert('Por favor, selecciona una receta y especifica una cantidad de porciones válida.');
+    if (!recetaSeleccionada || isNaN(cantidadComensales) || cantidadComensales <= 0) {
+        alert('Por favor, selecciona una receta y especifica una cantidad de comensales válida.');
         return;
     }
 
@@ -151,10 +159,10 @@ function calcularIngredientes() {
         if (ingrediente === 'Variantes') {
             html += '<tr><td colspan="3"><strong>Variantes:</strong></td></tr>';
             for (const [variante, varianteInfo] of Object.entries(info)) {
-                html += `<tr><td>${variante}</td><td>${(varianteInfo.cantidad * cantidadPorciones).toFixed(2)}</td><td>${varianteInfo.unidad}</td></tr>`;
+                html += `<tr><td>${variante}</td><td>${(varianteInfo.cantidad * cantidadComensales).toFixed(2)}</td><td>${varianteInfo.unidad}</td></tr>`;
             }
         } else {
-            html += `<tr><td>${ingrediente}</td><td>${(info.cantidad * cantidadPorciones).toFixed(2)}</td><td>${info.unidad}</td></tr>`;
+            html += `<tr><td>${ingrediente}</td><td>${(info.cantidad * cantidadComensales).toFixed(2)}</td><td>${info.unidad}</td></tr>`;
         }
     }
 
