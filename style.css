@@ -67,19 +67,32 @@ table, th, td {
 }
 
 th, td {
-    padding: 10px; /* Espacio interno en celdas */
+    padding: 12px; /* Espacio interno en celdas */
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #4CAF50; /* Fondo verde para el encabezado */
+    color: white; /* Texto blanco en el encabezado */
     font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f2f2f2; /* Fondo gris claro para filas pares */
 }
 
 tr:hover {
-    background-color: #e2e2e2;
+    background-color: #ddd; /* Fondo gris oscuro para fila al pasar el cursor */
+}
+
+caption {
+    font-size: 1.5em;
+    margin: 10px;
+    font-weight: bold;
+}
+
+table {
+    border: 2px solid #4CAF50; /* Borde verde para la tabla */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Esconde cualquier borde que sobresalga */
 }
