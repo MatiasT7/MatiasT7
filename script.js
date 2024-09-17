@@ -1,4 +1,5 @@
 // Definición de recetas
+// Definición de recetas
 const recetas = {
     brownie: {
         "Porotos negros crudos": { cantidad: 60, unidad: 'g' },
@@ -120,17 +121,8 @@ const recetas = {
         "Aceite": { cantidad: 50, unidad: 'cc' },
         "Polvo de hornear": { cantidad: 10, unidad: 'g' },
         "Sal": { cantidad: 1.25, unidad: 'g' },
-        "Leche": { cantidad: 110, unidad: 'cc' },
-        "Vainilla": { cantidad: 10, unidad: 'cc' }
-    },
-    hummus: {
-        "Garbanzos": { cantidad: 250, unidad: 'g' },
-        "Ajo": { cantidad: 2, unidad: 'dientes' },
-        "Tahini": { cantidad: 2, unidad: 'cucharada' },
-        "Jugo de limón": { cantidad: 2, unidad: 'cucharada' },
-        "Aceite de oliva": { cantidad: 4, unidad: 'cucharada' },
-        "Sal": { cantidad: 1, unidad: 'cucharadita' },
-        "Pimienta": { cantidad: 1, unidad: 'pizca' }
+       
+
     }
 };
 
