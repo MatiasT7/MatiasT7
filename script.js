@@ -124,10 +124,11 @@ const recetas = {
         "Vainilla": { cantidad: 10, unidad: 'cc' }
     },
     hummus: {
-        "Garbanzos": { cantidad: 250, unidad: 'g' },
-        "Jugo de limón": { cantidad: 2, unidad: 'cucharada' },
-        "Aceite de oliva": { cantidad: 4, unidad: 'cucharada' },
-        "Sal": { cantidad: 1, unidad: 'cucharadita' },
+        "Garbanzos": { cantidad: 140, unidad: 'g' },
+        "Jugo de limón": { cantidad: 2.5, unidad: 'cc' },
+        "Aceite": { cantidad: 50, unidad: 'cc' },
+        "Sal": { cantidad: 1, unidad: 'g' },
+        "Agua de cocción": { cantidad: 0, unidad: 'C/N' },
        
     }
 };
