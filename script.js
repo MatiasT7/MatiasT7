@@ -240,6 +240,7 @@ const recetas = {
     }
 };
 
+
 // Función para calcular ingredientes
 function calcularIngredientes() {
     const recetaSeleccionada = document.getElementById('recetas').value;
@@ -255,16 +256,18 @@ function calcularIngredientes() {
 
     for (let ingrediente in ingredientes) {
         const item = ingredientes[ingrediente];
-        if (typeof item === 'object') {
+        if (typeof item === 'object' && !Array.isArray(item)) {
             if (item.cantidad === 'c/n') {
                 resultadosHTML += `<tr><td>${ingrediente}</td><td>${item.cantidad}</td><td>${item.unidad}</td></tr>`;
             } else {
                 for (let variante in item) {
-                    let cantidad = item[variante].cantidad * cantidadComensales;
-                    let unidad = item[variante].unidad;
-                    // Verifica que la cantidad es un número válido
-                    cantidad = isNaN(cantidad) ? 'Cantidad no válida' : cantidad.toFixed(2);
-                    resultadosHTML += `<tr><td>${variante}</td><td>${cantidad}</td><td>${unidad}</td></tr>`;
+                    if (item.hasOwnProperty(variante)) {
+                        let cantidad = item[variante].cantidad * cantidadComensales;
+                        let unidad = item[variante].unidad;
+                        // Verifica que la cantidad es un número válido
+                        cantidad = isNaN(cantidad) ? 'Cantidad no válida' : cantidad.toFixed(2);
+                        resultadosHTML += `<tr><td>${variante}</td><td>${cantidad}</td><td>${unidad}</td></tr>`;
+                    }
                 }
             }
         } else {
