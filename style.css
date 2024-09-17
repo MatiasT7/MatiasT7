@@ -67,7 +67,7 @@ table, th, td {
 }
 
 th, td {
-    padding: 10px; /* Espacio interno en celdas */
+    padding: 8px;
     text-align: left;
 }
 
