@@ -14,6 +14,8 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
 }
 
 h1 {
@@ -42,37 +44,42 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-#resultados {
+.result {
+    font-size: 1.2em;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
 }
 
-#tablaResultados {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-#tablaResultados caption {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-#tablaResultados th, #tablaResultados td {
+table, th, td {
     border: 1px solid #ddd;
-    padding: 8px;
+}
+
+th, td {
+    padding: 10px; /* Espacio interno en celdas */
     text-align: left;
 }
 
-#tablaResultados th {
-    background-color: #007bff;
-    color: white;
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
 }
 
-#tablaResultados tr:nth-child(even) {
-    background-color: #f2f2f2;
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e2e2e2;
 }
