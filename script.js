@@ -130,6 +130,15 @@ const recetas = {
         "Sal": { cantidad: 1, unidad: 'g' },
         "Agua de cocción": { cantidad: 0, unidad: 'C/N' },
        
+    untablericota: {
+        "Ricota": { cantidad: 170, unidad: 'g' },
+        "Aceite": { cantidad: 30, unidad: 'cc' },
+        "Sal": { cantidad: 1, unidad: 'g' }
+        "Hierbas (opcional)": { cantidad: 0, unidad: 'cantidad necesaria' }
+        
+    },
+        
+       
     }
 };
 
