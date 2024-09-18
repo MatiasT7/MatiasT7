@@ -136,9 +136,7 @@ const recetas = {
         "Sal": { cantidad: 1, unidad: 'g' }
         "Hierbas (opcional)": { cantidad: 0, unidad: 'cantidad necesaria' }
         
-    },
-        
-       
+    },    
     }
 };
 
